@@ -18,6 +18,9 @@ public class JeeModel {
    private String gender;
    private String country;
    private String state;
+   private int userid;
+   private String uname;
+   private String password;
 public int getCanditateid() {
 	return canditateid;
 }
@@ -65,6 +68,24 @@ public String getState() {
 }
 public void setState(String state) {
 	this.state = state;
+}
+public int getUserid() {
+	return userid;
+}
+public void setUserid(int userid) {
+	this.userid = userid;
+}
+public String getUname() {
+	return uname;
+}
+public void setUname(String uname) {
+	this.uname = uname;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
 }
    
 

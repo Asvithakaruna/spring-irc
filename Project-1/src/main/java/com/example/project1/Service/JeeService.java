@@ -1,8 +1,12 @@
 package com.example.project1.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.project1.JeeApplication.JeeModel;
@@ -28,5 +32,43 @@ public class JeeService {
 		// TODO Auto-generated method stub
 		jrepo.deleteById(id);
 	}
+	public List<JeeModel> sortAsc(String canditatename) {
+		// TODO Auto-generated method stub
+		return jrepo.findAll(Sort.by(canditatename).ascending());
+	}
+	public List<JeeModel>paginationData(int pgn,int pgs)
+	{
+		Page<JeeModel>p=jrepo.findAll(PageRequest.of(pgn, pgs));
+		return p.getContent();
+	}
+	public List<JeeModel> paginationAndSorting(int pgn, int pgs, String canditatename) {
+		// TODO Auto-generated method stub
+	    Page<JeeModel>p=jrepo.findAll(PageRequest.of(pgn, pgs));
+	    return p.getContent();
+	}
+	public String checklogin(String uname, String password) {
+		// TODO Auto-generated method stub
+		JeeModel user=jrepo.findByuname(uname);
+		if(user==null)
+		{
+			return "No user found";
+		}
+		else
+		{
+			if(user.getPassword().equals(password))
+			{
+				return "Login successfull";
+			}
+			else
+			{
+				return"Login failed";
+			}
+		}
+	}
+	public List<JeeModel> sortDesc(String canditatename) {
+		// TODO Auto-generated method stub
+		return jrepo.findAll(Sort.by(canditatename).descending());
+	}
 
+	
 }
