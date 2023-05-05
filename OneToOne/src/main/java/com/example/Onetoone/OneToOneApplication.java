@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.Onetoone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +19,10 @@ import io.swagger.v3.oas.annotations.info.Info;
 		)
 		)
 		)
-public class Project1Application {
+public class OneToOneApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Project1Application.class, args);
+		SpringApplication.run(OneToOneApplication.class, args);
 	}
 
 }
