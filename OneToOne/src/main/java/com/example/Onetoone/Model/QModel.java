@@ -36,5 +36,4 @@ public class QModel {
 		this.ans = ans;
 	}
 	
-	
 }
